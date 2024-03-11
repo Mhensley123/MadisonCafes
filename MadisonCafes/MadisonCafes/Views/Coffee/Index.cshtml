@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Coffee>
+
+<h2>Coffee</h2>
+
+
+<table class="table">
+    <tr>
+        <th>CoffeeID</th>
+        <th>Cafe</th>
+        <th>Location</th>
+        <th>Late_Night_Spots</th>
+        <th>Starting_Price</th>
+        <th>Ambience</th>
+        <th>Wifi</th>
+        <th>Tipping</th>
+        <th>Featured_Cafe</th>
+    </tr>
+
+    @foreach (var coffee in Model)
+    {
+        <tr>
+
+            <td><a href=/Coffee/ViewCoffee/@coffee.CoffeeID>@coffee.CoffeeID</a></td>
+            <td>@coffee.Cafe</td>
+            <td>@coffee.Location</td>
+            <td>@coffee.Late_Night_Spots</td>
+            <td>@coffee.Starting_Price</td>
+            <td>@coffee.Ambience</td>
+            <td>@coffee.Wifi</td>
+            <td>@coffee.Tipping</td>
+            <td>@coffee.Featured_Cafe</td>
+        </tr>
+
+    }
+</table>
