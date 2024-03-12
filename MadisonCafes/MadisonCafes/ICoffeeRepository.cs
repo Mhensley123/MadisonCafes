@@ -9,5 +9,8 @@ namespace MadisonCafes
     public interface ICoffeeRepository
     {
         public IEnumerable<Coffee> GetAllCoffee();
+        public Coffee GetCoffee(int id);
     }
+
+
 }

@@ -17,7 +17,11 @@ namespace MadisonCafes
             return _conn.Query<Coffee>("Select * from coffee;");
         }
 
-       
-        
+
+        public Coffee GetCoffee(int id)
+        {
+            return _conn.QuerySingle<Coffee>("SELECT * FROM COFFEE WHERE COFFEEID = @id",
+                new { id = id });
+        }
     }
 }

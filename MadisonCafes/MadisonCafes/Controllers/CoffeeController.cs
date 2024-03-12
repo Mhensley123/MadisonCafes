@@ -17,5 +17,12 @@ namespace MadisonCafes.Controllers
 
             return View(coffee);
         }
+
+        public IActionResult ViewCoffee(int id)
+        {
+            var coffee = repo.GetCoffee(id);
+
+            return View(coffee);
+        }
     }
 }
