@@ -10,6 +10,7 @@ namespace MadisonCafes
     {
         public IEnumerable<Coffee> GetAllCoffee();
         public Coffee GetCoffee(int id);
+        public void UpdateCoffee(Coffee coffee);
     }
 
 

@@ -1,7 +1,15 @@
-
-using MadisonCafes;
-using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using MySql.Data.MySqlClient;
+using MadisonCafes;
+using MadisonCafes.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +34,7 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-  
+    
     app.UseHsts();
 }
 
@@ -43,3 +51,6 @@ app.Run();
 
 
 app.Run();
+
+
+

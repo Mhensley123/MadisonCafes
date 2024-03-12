@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MadisonCafes.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MadisonCafes.Controllers
 {
@@ -24,5 +25,25 @@ namespace MadisonCafes.Controllers
 
             return View(coffee);
         }
+
+        public IActionResult UpdateCoffee(int id)
+        {
+            Coffee coff = repo.GetCoffee(id);
+
+            if (coff == null)
+            {
+                return View("CoffeeNotFound");
+            }
+
+            return View(coff);
+        }
+
+        public IActionResult UpdateCoffeeToDatabase(Coffee coffee)
+        {
+            repo.UpdateCoffee(coffee);
+
+            return RedirectToAction("ViewCoffee", new { id = coffee.CoffeeID });
+        }
+
     }
 }

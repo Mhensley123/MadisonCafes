@@ -1,0 +1,37 @@
+﻿@model Coffee
+
+<h2>Update @Model.Cafe</h2>
+
+@using (Html.BeginForm("UpdateCoffeeToDatabase", "Coffee", "Post"))
+{
+    <input asp-for="CoffeeID" type="hidden" value="@Model.CoffeeID" />
+
+    <label asp-for="Cafe" class="control-label">Cafe</label>
+
+    <input type="text" cafe="Cafe" class="form-control" value="@Model.Cafe" asp-for="Cafe" />
+
+    <label asp-for="Location" class="control-label">Location</label>
+
+    <input type="text" step="" name="Location" class="form-control" value="@Model.Location" asp-for="Location" />
+
+    <label asp-for="Late_Night_Spots" class="control-label">Late_Night_Spots</label>
+    <input type="text" cafe="Late_Night_Spots" class="form-control" value="@Model.Late_Night_Spots" asp-for="Late_Night_Spots" />
+
+    <label asp-for="Starting_Price" class="control-label">Starting_Price</label>
+    <input type="text" cafe="Starting_Price" class="form-control" value="@Model.Starting_Price" asp-for="Starting_Price" />
+
+    <label asp-for="Ambience" class="control-label">Ambience</label>
+    <input type="text" cafe="Ambience" class="form-control" value="@Model.Ambience" asp-for="Ambience" />
+
+    <label asp-for="Wifi" class="control-label">Wifi</label>
+    <input type="text" cafe="Wifi" class="form-control" value="@Model.Wifi" asp-for="Wifi" />
+
+    <label asp-for="Tipping" class="control-label">Tipping</label>
+    <input type="text" cafe="Tipping" class="form-control" value="@Model.Tipping" asp-for="Tipping" />
+
+    <label asp-for="Featured_Cafe" class="control-label">Featured_Cafe</label>
+    <input type="text" cafe="Featured_Cafe" class="form-control" value="@Model.Featured_Cafe" asp-for="Featured_Cafe" />
+    <br />
+    <input type="submit" value="Update Cafe" class="btn btn-primary" />
+
+}
