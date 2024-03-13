@@ -1,0 +1,20 @@
+﻿@model Coffee
+<h2>Create a New Coffee</h2>
+@using (Html.BeginForm("InsertCoffeeToDatabase", "Coffee", "Post"))
+{
+    <input asp-for="CoffeeID" type="hidden" value="" />
+    <label asp-for="Cafe" class="control-label">Cafe</label>
+    <input type="text" name="Cafe" class="form-control" value="" />
+    <label asp-for="Location" class="control-label">Location</label>
+    <input type="text" step="" name="Location" class="form-control" />
+    <div class="form-group">
+        <label for="">Select a FeaturedCafe</label>
+        <select class="form-control" name="CoffeeID" value="">
+            @foreach (var fea in Model.FeaturedCafe)
+            {
+                <option value="@fea.CoffeeID">@fea.CoffeeID @fea.Cafe</option>
+            }
+        </select>
+    </div>
+    <input type="submit" value="Create Coffee" class="btn btn-primary" />
+}

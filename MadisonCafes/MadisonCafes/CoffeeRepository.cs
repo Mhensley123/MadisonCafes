@@ -29,5 +29,25 @@ namespace MadisonCafes
             _conn.Execute("UPDATE coffee SET Cafe = @cafe, Location = @location, Late_Night_Spots =@late_night_spots, Starting_Price = @starting_price, Ambience = @ambience, Wifi = @wifi, Tipping = @tipping, Featured_Cafe = @featured_cafe WHERE COFFEEID = @COFFEEID",
              new { COFFEEID = coffee.CoffeeID, cafe = coffee.Cafe, location = coffee.Location, late_night_spots = coffee.Late_Night_Spots, starting_price = coffee.Starting_Price, ambience = coffee.Ambience, wifi = coffee.Wifi, tipping = coffee.Tipping, featured_cafe = coffee.Featured_Cafe });
         }
+        public void InsertCoffee(Coffee coffeeToInsert)
+        {
+            _conn.Execute("INSERT INTO coffee (CAFE, LOCATION, LATE_NIGHT_SPOTS, STARTING_PRICE, AMBIENCE, WIFI, TIPPING, FEATURED_CAFE, COFFEEID) VALUES (@cafe, @location, @late_Night_Spots, @starting_Price, @ambience, @wifi, @tipping, @featured_Cafe, @coffeeID);",
+                new { cafe = coffeeToInsert.Cafe, location = coffeeToInsert.Location, late_night_spots = coffeeToInsert.Late_Night_Spots, starting_price = coffeeToInsert.Starting_Price, ambience = coffeeToInsert.Ambience, wifi = coffeeToInsert.Wifi, tipping = coffeeToInsert.Tipping, featured_cafe = coffeeToInsert.Featured_Cafe, coffeeID = coffeeToInsert.CoffeeID });
+        }
+
+
+        public IEnumerable<FeaturedCafe> GetFeaturedCafe()
+        {
+            return _conn.Query<FeaturedCafe>("SELECT * FROM featured_cafe;");
+        }
+
+        public Coffee AssignFeaturedCafe()
+        {
+            var featuredCafeList = GetFeaturedCafe();
+            var coffee = new Coffee();
+            coffee.FeaturedCafe = featuredCafeList;
+
+            return coffee;
+        }
     }
 }

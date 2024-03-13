@@ -44,6 +44,18 @@ namespace MadisonCafes.Controllers
 
             return RedirectToAction("ViewCoffee", new { id = coffee.CoffeeID });
         }
+        public IActionResult InsertCoffee()
+        {
+            var coff = repo.AssignFeaturedCafe();
 
+            return View(coff);
+        }
+
+        public IActionResult InsertCoffeeToDatabase(Coffee coffeeToInsert)
+        {
+            repo.InsertCoffee(coffeeToInsert);
+
+            return RedirectToAction("Index");
+        }
     }
 }
