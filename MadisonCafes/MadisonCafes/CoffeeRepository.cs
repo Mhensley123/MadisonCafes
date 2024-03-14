@@ -49,5 +49,15 @@ namespace MadisonCafes
 
             return coffee;
         }
+
+        public void DeleteCoffee(Coffee coffee)
+        {
+            _conn.Execute("DELETE FROM coffee WHERE CoffeeID = @id;",
+                                   new { id = coffee.CoffeeID });
+            _conn.Execute("DELETE FROM featured_cafe WHERE CoffeeID = @id;",
+                                       new { id = coffee.CoffeeID });
+
+
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace MadisonCafes
         public void InsertCoffee(Coffee coffeeToInsert);
         public IEnumerable<FeaturedCafe> GetFeaturedCafe();
         public Coffee AssignFeaturedCafe();
+        public void DeleteCoffee(Coffee coffee);
     }
 
 

@@ -34,3 +34,11 @@
     <a href="/Coffee/UpdateCoffee/@Model.CoffeeID">Update this Coffee</a>
 </div>
 
+<div style="display: block">
+    @using (Html.BeginForm("DeleteCoffee", "Coffee", "Post"))
+    {
+        <input type="hidden" asp-for="CoffeeID" value="@Model.CoffeeID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this coffee" />
+    }
+</div>
+

@@ -57,5 +57,12 @@ namespace MadisonCafes.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult DeleteCoffee(Coffee coffee)
+        {
+            repo.DeleteCoffee(coffee);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
