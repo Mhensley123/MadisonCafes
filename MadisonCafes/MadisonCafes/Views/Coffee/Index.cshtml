@@ -16,6 +16,8 @@
         <th>Wifi</th>
         <th>Tipping</th>
         <th>Featured_Cafe</th>
+        <th>photo</th>
+        <th>description</th>
     </tr>
 
     @foreach (var coffee in Model)
@@ -31,6 +33,8 @@
             <td>@coffee.Wifi</td>
             <td>@coffee.Tipping</td>
             <td>@coffee.Featured_Cafe</td>
+            <td>@coffee.photo</td>
+            <td>@coffee.description</td>
         </tr>
 
     }
