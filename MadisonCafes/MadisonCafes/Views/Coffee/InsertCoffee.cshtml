@@ -1,5 +1,6 @@
 ﻿@model Coffee
 <h2>Create a New Coffee</h2>
+@Html.Partial("_CoffeeImage")
 @using (Html.BeginForm("InsertCoffeeToDatabase", "Coffee", "Post"))
 {
     <input asp-for="CoffeeID" type="hidden" value="" />

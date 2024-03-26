@@ -1,0 +1,23 @@
+﻿@model MadisonCafes.Models.Coffee
+
+<img src="@Model.Photo" class="img-fluid" />
+
+<fieldset>
+<div>
+<img src="@Model.Photo" class="~Image" />
+
+</div>
+
+<div class="display-label">
+    @Html.DisplayNameFor(model => model.Photo)
+</div>
+<div class="display-field">
+    img src="@Url.Content(Model.Photo)" alt="@Model.Description" />
+
+        <img src="@Url.Action("DisplayImage", "Coffee", new { imageName = "~/Image/creme brew lait.png" })" alt="Image" />
+
+</div>
+
+
+</fieldset>
+</div>

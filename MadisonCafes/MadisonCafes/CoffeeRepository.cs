@@ -28,12 +28,12 @@ namespace MadisonCafes
         public void UpdateCoffee(Coffee coffee)
         {
             _conn.Execute("UPDATE coffee SET Cafe = @cafe, Location = @location, Late_Night_Spots =@late_night_spots, Starting_Price = @starting_price, Ambience = @ambience, Wifi = @wifi, Tipping = @tipping, Featured_Cafe = @featured_cafe, photo = @photo, description = @description WHERE COFFEEID = @COFFEEID",
-             new { COFFEEID = coffee.CoffeeID, cafe = coffee.Cafe, location = coffee.Location, late_night_spots = coffee.Late_Night_Spots, starting_price = coffee.Starting_Price, ambience = coffee.Ambience, wifi = coffee.Wifi, tipping = coffee.Tipping, featured_cafe = coffee.Featured_Cafe, photo = coffee.photo, description = coffee.description }); 
+             new { COFFEEID = coffee.CoffeeID, cafe = coffee.Cafe, location = coffee.Location, late_night_spots = coffee.Late_Night_Spots, starting_price = coffee.Starting_Price, ambience = coffee.Ambience, wifi = coffee.Wifi, tipping = coffee.Tipping, featured_cafe = coffee.Featured_Cafe, photo = coffee.Photo, description = coffee.Description }); 
         }
         public void InsertCoffee(Coffee coffeeToInsert)
         {
             _conn.Execute("INSERT INTO coffee (CAFE, LOCATION, LATE_NIGHT_SPOTS, STARTING_PRICE, AMBIENCE, WIFI, TIPPING, FEATURED_CAFE, PHOTO, DESCRIPTION, COFFEEID) VALUES (@cafe, @location, @late_Night_Spots, @starting_Price, @ambience, @wifi, @tipping, @featured_Cafe, @photo, @description, @coffeeID);",
-                new { cafe = coffeeToInsert.Cafe, location = coffeeToInsert.Location, late_night_spots = coffeeToInsert.Late_Night_Spots, starting_price = coffeeToInsert.Starting_Price, ambience = coffeeToInsert.Ambience, wifi = coffeeToInsert.Wifi, tipping = coffeeToInsert.Tipping, featured_cafe = coffeeToInsert.Featured_Cafe, photo = coffeeToInsert.photo, description = coffeeToInsert.description, coffeeID = coffeeToInsert.CoffeeID });
+                new { cafe = coffeeToInsert.Cafe, location = coffeeToInsert.Location, late_night_spots = coffeeToInsert.Late_Night_Spots, starting_price = coffeeToInsert.Starting_Price, ambience = coffeeToInsert.Ambience, wifi = coffeeToInsert.Wifi, tipping = coffeeToInsert.Tipping, featured_cafe = coffeeToInsert.Featured_Cafe, photo = coffeeToInsert.Photo, Description = coffeeToInsert.Description, coffeeID = coffeeToInsert.CoffeeID });
         }
 
 

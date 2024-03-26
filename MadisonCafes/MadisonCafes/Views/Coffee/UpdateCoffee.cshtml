@@ -2,6 +2,7 @@
 
 <h2>Update @Model.Cafe</h2>
 
+
 @using (Html.BeginForm("UpdateCoffeeToDatabase", "Coffee", "Post"))
 {
     <input asp-for="CoffeeID" type="hidden" value="@Model.CoffeeID" />
@@ -30,11 +31,11 @@
     <input type="text" cafe="Tipping" class="form-control" value="@Model.Tipping" asp-for="Tipping" />
 
 
-    <label asp-for="photo" class="control-label">photo</label>
-    <input type="text" cafe="photo" class="form-control" value="@Model.photo" asp-for="photo" />
+    <label asp-for="Photo" class="control-label">photo</label>
+    <input type="text" cafe="photo" class="form-control" value="@Model.Photo" asp-for="Photo" />
 
-    <label asp-for="description" class="control-label">description</label>
-    <input type="text" cafe="description" class="form-control" value="@Model.description" asp-for="description" />
+    <label asp-for="Description" class="control-label">description</label>
+    <input type="text" cafe="description" class="form-control" value="@Model.Description" asp-for="Description" />
     <br />
     <input type="submit" value="Update Cafe" class="btn btn-primary" />
 

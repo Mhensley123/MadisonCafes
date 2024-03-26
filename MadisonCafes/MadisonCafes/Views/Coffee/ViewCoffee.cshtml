@@ -1,6 +1,10 @@
 ﻿@model Coffee
 
 <h3>@Model.Cafe Information</h3>
+<div class="display-field">
+  <p>  <img src="@Url.Content(Model.Photo)" alt="@Model.Description" /> </p>
+
+</div>
 
 
 <table class="table">
@@ -14,8 +18,8 @@
         <th>Wifi</th>
         <th>Tipping</th>
         <th>Featured_Cafe</th>
-        <th>photo</th>
-        <th>description</th>
+        <th>Photo</th>
+        <th>Description</th>
     </tr>
     <tr>
         <td>@Model.CoffeeID</td>
@@ -27,8 +31,8 @@
         <td>@Model.Wifi</td>
         <td>@Model.Tipping</td>
         <td>@Model.Featured_Cafe</td>
-        <td>@Model.photo</td>
-        <td>@Model.description</td>
+        <td>@Model.Photo</td>
+        <td>@Model.Description</td>
     </tr>
 
 </table>

@@ -64,5 +64,10 @@ namespace MadisonCafes.Controllers
             return RedirectToAction("Index");
         }
 
+        
+
+        private class Photo
+        {
+        }
     }
 }

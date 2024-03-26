@@ -11,8 +11,8 @@
         public string Wifi { get; set; }
         public string Tipping { get; set; }
         public string Featured_Cafe { get; set; }
-        public string photo { get; set; }
-        public string description { get; set; }
+        public string Photo { get; set; }
+        public string Description { get; set; }
 
         public IEnumerable<FeaturedCafe> FeaturedCafe { get; set; }
 

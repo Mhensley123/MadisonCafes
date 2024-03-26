@@ -5,6 +5,7 @@
     <a href="/Coffee/InsertCoffee/">Create a New Coffee</a>
 </div>
 
+
 <table class="table">
     <tr>
         <th>CoffeeID</th>
@@ -16,8 +17,8 @@
         <th>Wifi</th>
         <th>Tipping</th>
         <th>Featured_Cafe</th>
-        <th>photo</th>
-        <th>description</th>
+        <th>Photo</th>
+        <th>Description</th>
     </tr>
 
     @foreach (var coffee in Model)
@@ -33,8 +34,8 @@
             <td>@coffee.Wifi</td>
             <td>@coffee.Tipping</td>
             <td>@coffee.Featured_Cafe</td>
-            <td>@coffee.photo</td>
-            <td>@coffee.description</td>
+            <td>@coffee.Photo</td>
+            <td>@coffee.Description</td>
         </tr>
 
     }
