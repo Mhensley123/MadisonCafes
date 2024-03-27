@@ -3,7 +3,7 @@
 <h2>Update @Model.Cafe</h2>
 
 
-@using (Html.BeginForm("UpdateCoffeeToDatabase", "Coffee", "Post"))
+@using (Html.BeginForm("UpdateCoffeeToDatabase", "Coffee", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <input asp-for="CoffeeID" type="hidden" value="@Model.CoffeeID" />
 
@@ -32,7 +32,8 @@
 
 
     <label asp-for="Photo" class="control-label">photo</label>
-    <input type="text" cafe="photo" class="form-control" value="@Model.Photo" asp-for="Photo" />
+    @* <input type="text" cafe="photo" class="form-control" value="@Model.Photo" asp-for="Photo" /> *@
+    <input type="file" name="file" class="form-control" />
 
     <label asp-for="Description" class="control-label">description</label>
     <input type="text" cafe="description" class="form-control" value="@Model.Description" asp-for="Description" />

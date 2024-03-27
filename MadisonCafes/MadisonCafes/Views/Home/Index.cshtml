@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -22,10 +21,9 @@
             font-family: cursive
         }
     </style>
-    <form action="action_page.php" method="post">
-        <div class="imgcontainer">
-            <img src="white bison.jpg" alt="Coffee" class="coffee">
-        </div>
+    @* <form action="action_page.php" method="post"> *@
+    <form asp-action="Login" method="post">
+        
 
         <div class="container">
             <label for="uname"><b>Username</b></label>

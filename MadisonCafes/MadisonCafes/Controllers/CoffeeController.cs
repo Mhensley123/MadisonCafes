@@ -38,8 +38,17 @@ namespace MadisonCafes.Controllers
             return View(coff);
         }
 
-        public IActionResult UpdateCoffeeToDatabase(Coffee coffee)
+        public IActionResult UpdateCoffeeToDatabase(Coffee coffee, IFormFile file)
         {
+            string fileName = string.Empty;
+            if (file != null && file.Length > 0)
+            {
+                if (UploadFile(file))
+                {
+                    fileName = file.FileName;
+                }
+            }
+            coffee.Photo = fileName;
             repo.UpdateCoffee(coffee);
 
             return RedirectToAction("ViewCoffee", new { id = coffee.CoffeeID });
@@ -64,7 +73,36 @@ namespace MadisonCafes.Controllers
             return RedirectToAction("Index");
         }
 
-        
+        public bool UploadFile(IFormFile file)
+        {
+            string path = "";
+            try
+            {
+                if (file.Length > 0)
+                {
+                    path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "wwwroot"));
+                    string path1 = Path.GetFullPath(Path.Combine(path, "Images"));
+                    if (!Directory.Exists(path1))
+                    {
+                        Directory.CreateDirectory(path1);
+                    }
+                    using (var fileStream = new FileStream(Path.Combine(path1, file.FileName), FileMode.Create))
+                    {
+                        file.CopyToAsync(fileStream);
+                    }
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("File Copy Failed", ex);
+            }
+        }
+
 
         private class Photo
         {

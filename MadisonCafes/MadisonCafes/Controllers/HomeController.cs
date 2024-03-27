@@ -18,6 +18,14 @@ namespace MadisonCafes.Controllers
             return View();
         }
 
+        public IActionResult Login(string uname, string psw)
+        {
+            string userName = uname;
+            string password = psw;
+            //here is your logic for login
+            return View("Index");
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -28,5 +36,7 @@ namespace MadisonCafes.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }

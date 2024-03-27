@@ -5,38 +5,44 @@
     <a href="/Coffee/InsertCoffee/">Create a New Coffee</a>
 </div>
 
-
-<table class="table">
-    <tr>
-        <th>CoffeeID</th>
-        <th>Cafe</th>
-        <th>Location</th>
-        <th>Late_Night_Spots</th>
-        <th>Starting_Price</th>
-        <th>Ambience</th>
-        <th>Wifi</th>
-        <th>Tipping</th>
-        <th>Featured_Cafe</th>
-        <th>Photo</th>
-        <th>Description</th>
-    </tr>
-
-    @foreach (var coffee in Model)
-    {
+    <table class="table">
         <tr>
-
-            <td><a href=/Coffee/ViewCoffee/@coffee.CoffeeID>@coffee.CoffeeID</a></td>
-            <td>@coffee.Cafe</td>
-            <td>@coffee.Location</td>
-            <td>@coffee.Late_Night_Spots</td>
-            <td>@coffee.Starting_Price</td>
-            <td>@coffee.Ambience</td>
-            <td>@coffee.Wifi</td>
-            <td>@coffee.Tipping</td>
-            <td>@coffee.Featured_Cafe</td>
-            <td>@coffee.Photo</td>
-            <td>@coffee.Description</td>
+            <th>CoffeeID</th>
+            <th>Cafe</th>
+            <th>Location</th>
+            <th>Late_Night_Spots</th>
+            <th>Starting_Price</th>
+            <th>Ambience</th>
+            <th>Wifi</th>
+            <th>Tipping</th>
+            <th>Featured_Cafe</th>
+            <th>Photo</th>
+            <th>Description</th>
         </tr>
 
-    }
-</table>
+        @foreach (var coffee in Model)
+        {
+            <tr>
+
+                @* <td><a href=/Coffee/ViewCoffee/@coffee.CoffeeID>@coffee.CoffeeID</a></td> *@
+                <td>
+                    <a asp-action="ViewCoffee" asp-route-id="@coffee.CoffeeID">@coffee.CoffeeID</a>
+                </td>
+                <td>@coffee.Cafe</td>
+                <td>@coffee.Location</td>
+                <td>@coffee.Late_Night_Spots</td>
+                <td>@coffee.Starting_Price</td>
+                <td>@coffee.Ambience</td>
+                <td>@coffee.Wifi</td>
+                <td>@coffee.Tipping</td>
+                <td>@coffee.Featured_Cafe</td>
+                @* <td>@coffee.Photo</td> *@
+                <td>
+                    <img width="150" height="150" src="~/Images/@coffee.Photo" />
+                </td>
+                <td>@coffee.Description</td>
+            </tr>
+
+        }
+    </table>
+

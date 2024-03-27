@@ -2,7 +2,10 @@
 
 <h3>@Model.Cafe Information</h3>
 <div class="display-field">
-  <p>  <img src="@Url.Content(Model.Photo)" alt="@Model.Description" /> </p>
+    <p>
+        @* <img src="@Url.Content(Model.Photo)" alt="@Model.Description" /> *@
+        <img width="150" height="150" src="~/Images/@Model.Photo" alt="@Model.Description" />
+    </p>
 
 </div>
 
@@ -31,7 +34,10 @@
         <td>@Model.Wifi</td>
         <td>@Model.Tipping</td>
         <td>@Model.Featured_Cafe</td>
-        <td>@Model.Photo</td>
+        @* <td>@Model.Photo</td> *@
+        <td>
+            <img width="150" height="150" src="~/Photos/@Model.Photo" />
+        </td>
         <td>@Model.Description</td>
     </tr>
 
@@ -49,4 +55,5 @@
         <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this coffee" />
     }
 </div>
+
 
