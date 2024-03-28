@@ -5,7 +5,7 @@
 
 <div class="text-center">
 
-    <h1 class="display-4">
+    <h1 class="display-6">
         Coffee Shops of Madison
 
     </h1>
@@ -16,17 +16,24 @@
     <style>
         body {
             background-image: url("https://images.pexels.com/photos/15821235/pexels-photo-15821235/free-photo-of-neon-on-wall.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-            background-size: cover;
+            background-size: 100% 100%;
             color: hotpink;
             font-family: cursive
         }
     </style>
-    @* <form action="action_page.php" method="post"> *@
-    <form asp-action="Login" method="post">
+
+    
+    
+    @* <form action="action_page.php" method="post" >
+     *@
+    <form asp-action="Login" method="post" >
         
 
-        <div class="container">
-            <label for="uname"><b>Username</b></label>
+        <div class="container" >
+
+            <td align="left">
+                <label for="uname"><b>Username</b></label>
+            </td>
             <input type="text" placeholder="Enter Username" name="uname" required>
 
             <label for="psw"><b>Password</b></label>
@@ -38,13 +45,15 @@
             </label>
         </div>
 
-        <div class="container" style="background-color:#f1f1f1">
+        <div class="container" style="background-color:#f1f1f1" >
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
+
         </div>
     </form>
-    ﻿
-
+    
+    }
 
 
 </div>
+﻿

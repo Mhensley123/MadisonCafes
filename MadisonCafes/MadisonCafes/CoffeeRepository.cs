@@ -2,6 +2,7 @@
 using Dapper;
 using System.Data;
 
+
 namespace MadisonCafes
 {
     public class CoffeeRepository : ICoffeeRepository
@@ -32,7 +33,7 @@ namespace MadisonCafes
         public void InsertCoffee(Coffee coffeeToInsert)
         {
             _conn.Execute("INSERT INTO coffee (CAFE, LOCATION, LATE_NIGHT_SPOTS, STARTING_PRICE, AMBIENCE, WIFI, TIPPING, FEATURED_CAFE, PHOTO, DESCRIPTION, COFFEEID) VALUES (@cafe, @location, @late_Night_Spots, @starting_Price, @ambience, @wifi, @tipping, @featured_Cafe, @photo, @description, @coffeeID);",
-                new { cafe = coffeeToInsert.Cafe, location = coffeeToInsert.Location, late_night_spots = coffeeToInsert.Late_Night_Spots, starting_price = coffeeToInsert.Starting_Price, ambience = coffeeToInsert.Ambience, wifi = coffeeToInsert.Wifi, tipping = coffeeToInsert.Tipping, featured_cafe = coffeeToInsert.Featured_Cafe, photo = coffeeToInsert.Photo, Description = coffeeToInsert.Description, coffeeID = coffeeToInsert.CoffeeID });
+                new { cafe = coffeeToInsert.Cafe, location = coffeeToInsert.Location, late_night_spots = coffeeToInsert.Late_Night_Spots, starting_price = coffeeToInsert.Starting_Price, ambience = coffeeToInsert.Ambience, wifi = coffeeToInsert.Wifi, tipping = coffeeToInsert.Tipping, featured_cafe = coffeeToInsert.Featured_Cafe, photo = coffeeToInsert.Photo, description = coffeeToInsert.Description, coffeeID = coffeeToInsert.CoffeeID });
         }
 
 
