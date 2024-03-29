@@ -26,7 +26,15 @@
 
     @* <form action="action_page.php" method="post" >
     *@
-    
+    <style type="text/css">
+        footer {
+            position: absolute;
+            bottom: 0;
+            height: 40px;
+            margin-top: 40px;
+        }
+    </style>
+    <div></div>
 
     <form asp-action="Login" method="post">
        
@@ -37,28 +45,63 @@
                 <label for="uname"><b>Username</b></label>
             </td>
             <input type="text" placeholder="Enter Username" name="uname" required>
-
+            <style type="text/css">
+                footer {
+                    position: absolute
+                    bottom: 0;
+                    height: 40px;
+                    margin-top: 40px;
+                }
+            </style>
+            <div></div>
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
-
+            <style type="text/css">
+                footer {
+                    position: absolute;
+                    bottom: 0;
+                    height: 40px;
+                    margin-top: 40px;
+                }
+            </style>
+            <div></div>
             <button type="submit">Login</button>
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
+            <style type="text/css">
+                footer {
+                    position: absolute;
+                    bottom: 0;
+                    height: 40px;
+                    margin-top: 40px;
+                }
+            </style>
+            <div></div>
         </div>
 
-        <div class="container" style="background-color:#f1f1f1">
+        <div class="container" style="background-color:">
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
+            <style type="text/css">
+                footer {
+                    position: absolute;
+                    bottom: 0;
+                    height: 40px;
+                    margin-top: 40px;
+                }
+            </style>
+            <div></div>
 
         </div>
+
        
 
     </form>
         
    
 
-    }
+    
 
 
 
