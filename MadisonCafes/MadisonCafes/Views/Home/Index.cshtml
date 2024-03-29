@@ -1,4 +1,4 @@
-﻿@{
+﻿﻿@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -22,14 +22,16 @@
         }
     </style>
 
-    
-    
-    @* <form action="action_page.php" method="post" >
-     *@
-    <form asp-action="Login" method="post" >
-        
 
-        <div class="container" >
+
+    @* <form action="action_page.php" method="post" >
+    *@
+    
+
+    <form asp-action="Login" method="post">
+       
+        <div class="container">
+            
 
             <td align="left">
                 <label for="uname"><b>Username</b></label>
@@ -45,15 +47,21 @@
             </label>
         </div>
 
-        <div class="container" style="background-color:#f1f1f1" >
+        <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
 
         </div>
+       
+
     </form>
-    
+        
+   
+
     }
 
 
+
 </div>
+
 ﻿

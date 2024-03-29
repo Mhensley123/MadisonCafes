@@ -1,13 +1,13 @@
 ﻿@model Coffee
 
 <h3>@Model.Cafe Information</h3>
-<div class="display-field">
+@* <div class="display-field">
     <p>
-        @* <img src="@Url.Content(Model.Photo)" alt="@Model.Description" /> *@
+         <img src="@Url.Content(Model.Photo)" alt="@Model.Description" /> 
         <img width="150" height="150" src="~/Images/@Model.Photo" alt="@Model.Description" />
-    </p>
+    </p> 
 
-</div>
+</div> *@
 
 
 <table class="table">
@@ -44,7 +44,7 @@
         <td>@Model.Featured_Cafe</td>
         @* <td>@Model.Photo</td> *@
         <td>
-            <img width="150" height="150" src="~/Photos/@Model.Photo" />
+            <img width="150" height="150" src="~/Images/@Model.Photo" alt="@Model.Description" />
         </td>
         <td>@Model.Description</td>
     </tr>
